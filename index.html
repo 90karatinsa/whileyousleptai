@@ -129,11 +129,21 @@
       <li class="tool"><a href="https://www.krea.ai/"><span class="name">Krea</span><span class="go" aria-hidden="true">↗</span><span class="what">Images generated in real time as you type or draw. The free plan has no commercial license.</span><span class="from">5 tools, one video team</span></a></li>
       <li class="tool"><a href="https://www.descript.com/"><span class="name">Descript</span><span class="go" aria-hidden="true">↗</span><span class="what">Edit a video by editing a document of what was said. Free exports carry a watermark.</span><span class="from">5 tools, one video team</span></a></li>
       <li class="tool"><a href="https://www.veed.io/"><span class="name">VEED</span><span class="go" aria-hidden="true">↗</span><span class="what">Talking heads, dubbing and subtitles in one place.</span><span class="from">5 tools, one video team</span></a></li>
+      <li class="tool"><a href="https://github.com/slvDev/esp32-ai"><span class="name">esp32-ai</span><span class="go" aria-hidden="true">↗</span><span class="what">A 28.9M-parameter language model that runs offline on an ESP32-S3 microcontroller. It only writes children's stories.</span><span class="from">An LLM on a chip with 512 KB of fast memory</span></a></li>
     </ul>
   </section>
 
   <section aria-labelledby="sources">
     <h2 id="sources">Sources <small>every claim, per video</small></h2>
+    <details>
+      <summary>An LLM on a chip with 512 KB of fast memory</summary>
+      <ul>
+        <li>28.9M parameters on an ESP32-S3, offline, 9.88 tokens per second; the 25M-parameter lookup table stays in slow flash and each token reads about 450 bytes of it: <a href="https://github.com/slvDev/esp32-ai">slvDev/esp32-ai README</a></li>
+        <li>87% of the model is the Per-Layer Embeddings table (an idea from Google's Gemma 3n); the dense transformer core is 556,416 parameters, 2%: <a href="https://huggingface.co/slvDev/esp32-ai-tinystories">model card</a></li>
+        <li>Trained only on short children's stories, so it can't answer questions or follow instructions: same model card · <a href="https://arxiv.org/abs/2305.07759">TinyStories (arXiv 2305.07759)</a></li>
+        <li>The board also has 8 MB of PSRAM and 16 MB of flash; the 512 KB is the chip's fast internal SRAM (README)</li>
+      </ul>
+    </details>
     <details>
       <summary>5 AI tools that each do one job of a video team</summary>
       <ul>
