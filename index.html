@@ -130,11 +130,21 @@
       <li class="tool"><a href="https://www.descript.com/"><span class="name">Descript</span><span class="go" aria-hidden="true">↗</span><span class="what">Edit a video by editing a document of what was said. Free exports carry a watermark.</span><span class="from">5 tools, one video team</span></a></li>
       <li class="tool"><a href="https://www.veed.io/"><span class="name">VEED</span><span class="go" aria-hidden="true">↗</span><span class="what">Talking heads, dubbing and subtitles in one place.</span><span class="from">5 tools, one video team</span></a></li>
       <li class="tool"><a href="https://github.com/slvDev/esp32-ai"><span class="name">esp32-ai</span><span class="go" aria-hidden="true">↗</span><span class="what">A 28.9M-parameter language model that runs offline on an ESP32-S3 microcontroller. It only writes children's stories.</span><span class="from">An LLM on a chip with 512 KB of fast memory</span></a></li>
+      <li class="tool"><a href="https://github.com/slvDev/esp32-ai/tree/main/docs/fly-connectome"><span class="name">esp32-ai fly port</span><span class="go" aria-hidden="true">↗</span><span class="what">Part of a real fruit fly's brain, 48,311 neurons, on the same ESP32-S3. It escapes a spider on screen and nothing was trained.</span><span class="from">A fruit fly brain on a tiny chip</span></a></li>
     </ul>
   </section>
 
   <section aria-labelledby="sources">
     <h2 id="sources">Sources <small>every claim, per video</small></h2>
+    <details>
+      <summary>Part of a fruit fly brain on a tiny chip</summary>
+      <ul>
+        <li>48,311 neurons and 9,462,135 connections from the male fruit fly connectome (MaleCNS v1.0), with the synaptic contact count of every connection kept exactly; a new decision about every 1.7 s; nothing was trained: <a href="https://github.com/slvDev/esp32-ai#porting-part-of-the-fruit-fly-connectome-to-esp32">slvDev/esp32-ai README</a></li>
+        <li>The spider's growing size drives the fly's own looming detectors (LC4 and LPLC2); escape neurons including DNp01, the giant fiber, make it leap away (same README)</li>
+        <li>Why only part of it: the whole nervous system needs 24.49 MiB and about 14 MiB of flash is left: <a href="https://github.com/slvDev/esp32-ai/blob/main/docs/fly-connectome/README.md#why-only-part-of-the-nervous-system">docs/fly-connectome</a></li>
+        <li>Data: MaleCNS v1.0 by the FlyEM Project at HHMI Janelia, the University of Cambridge, the MRC Laboratory of Molecular Biology and Google Research, used under CC BY 4.0 (<a href="https://github.com/slvDev/esp32-ai/blob/main/docs/fly-connectome/ATTRIBUTION.md">attribution</a>)</li>
+      </ul>
+    </details>
     <details>
       <summary>An LLM on a chip with 512 KB of fast memory</summary>
       <ul>
