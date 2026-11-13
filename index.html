@@ -132,11 +132,22 @@
       <li class="tool"><a href="https://github.com/slvDev/esp32-ai"><span class="name">esp32-ai</span><span class="go" aria-hidden="true">↗</span><span class="what">A 28.9M-parameter language model that runs offline on an ESP32-S3 microcontroller. It only writes children's stories.</span><span class="from">An LLM on a chip with 512 KB of fast memory</span></a></li>
       <li class="tool"><a href="https://github.com/slvDev/esp32-ai/tree/main/docs/fly-connectome"><span class="name">esp32-ai fly port</span><span class="go" aria-hidden="true">↗</span><span class="what">Part of a real fruit fly's brain, 48,311 neurons, on the same ESP32-S3. It escapes a spider on screen and nothing was trained.</span><span class="from">A fruit fly brain on a tiny chip</span></a></li>
       <li class="tool"><a href="https://elevenlabs.io/realtime"><span class="name">Eleven Realtime</span><span class="go" aria-hidden="true">↗</span><span class="what">ElevenLabs' speech-to-speech models for voice agents. v1 Max starts talking in 0.57 s on average; v1 Mini is the one ElevenLabs suggests for most uses.</span><span class="from">A fast voice agent, built the slow way</span></a></li>
+      <li class="tool"><a href="https://www.hedra.com/blog"><span class="name">Hedra × Krea 3</span><span class="go" aria-hidden="true">↗</span><span class="what">Hedra tuned Krea 3 on AMD MI355X GPUs: the drawing step went from 22.9 s to 3.3 s per edit, with much of the math in 6-bit numbers.</span><span class="from">Krea 3 draws 6.9x faster</span></a></li>
     </ul>
   </section>
 
   <section aria-labelledby="sources">
     <h2 id="sources">Sources <small>every claim, per video</small></h2>
+    <details>
+      <summary>Krea 3 draws 6.9x faster, and its math got rougher</summary>
+      <ul>
+        <li>Diffusion transformer (DiT) time per edit went from 22.9 s (BF16 baseline) to 3.3 s on AMD Instinct MI355X; the result comes from the combined stack (MXFP6 math, Hedra's own kernels, communication changes, model-level optimizations Krea provided), not one change: <a href="https://www.hedra.com/blog/optimizing-krea-3-inference-on-amd-instinct-mi355x">Hedra blog, Nov 2, 2026</a></li>
+        <li>MI355X runs 6-bit MXFP6 matrix math at four times its BF16 rate (same blog)</li>
+        <li>Quality target: stay within 2% of a full-precision reference (SSIM over 23 edits supplied by Krea). MXFP6 scored 98.3% and passed; MXFP4 scored 89.2% and missed (same blog)</li>
+        <li>Times are DiT timings, not full-request latency (same blog)</li>
+        <li>Not sponsored, no affiliate links.</li>
+      </ul>
+    </details>
     <details>
       <summary>A fast voice agent, built the slow way: Eleven Realtime</summary>
       <ul>
