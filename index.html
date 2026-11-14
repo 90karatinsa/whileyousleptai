@@ -133,11 +133,22 @@
       <li class="tool"><a href="https://github.com/slvDev/esp32-ai/tree/main/docs/fly-connectome"><span class="name">esp32-ai fly port</span><span class="go" aria-hidden="true">↗</span><span class="what">Part of a real fruit fly's brain, 48,311 neurons, on the same ESP32-S3. It escapes a spider on screen and nothing was trained.</span><span class="from">A fruit fly brain on a tiny chip</span></a></li>
       <li class="tool"><a href="https://elevenlabs.io/realtime"><span class="name">Eleven Realtime</span><span class="go" aria-hidden="true">↗</span><span class="what">ElevenLabs' speech-to-speech models for voice agents. v1 Max starts talking in 0.57 s on average; v1 Mini is the one ElevenLabs suggests for most uses.</span><span class="from">A fast voice agent, built the slow way</span></a></li>
       <li class="tool"><a href="https://www.hedra.com/blog"><span class="name">Hedra × Krea 3</span><span class="go" aria-hidden="true">↗</span><span class="what">Hedra tuned Krea 3 on AMD MI355X GPUs: the drawing step went from 22.9 s to 3.3 s per edit, with much of the math in 6-bit numbers.</span><span class="from">Krea 3 draws 6.9x faster</span></a></li>
+      <li class="tool"><a href="https://elevenlabs.io/blog/scribe-v3"><span class="name">Scribe v3</span><span class="go" aria-hidden="true">↗</span><span class="what">ElevenLabs' speech-to-text model; v3 Live is the realtime version for voice agents. ElevenLabs says v3 makes 27% fewer word errors than Scribe v2 across 102 languages.</span><span class="from">180 wrong words an hour</span></a></li>
     </ul>
   </section>
 
   <section aria-labelledby="sources">
     <h2 id="sources">Sources <small>every claim, per video</small></h2>
+    <details>
+      <summary>Two points of error is 180 wrong words an hour: Scribe v3</summary>
+      <ul>
+        <li>"A one-hour meeting at 150 words per minute is about 9,000 words, so the gap between a 4% and a 2% word error rate is 180 wrong words": ElevenLabs' own illustration, not Scribe v3's measured rate: <a href="https://elevenlabs.io/blog/scribe-v3">ElevenLabs blog, Nov 10, 2026</a></li>
+        <li>Errors cluster in names, numbers, acronyms and jargon; "fifteen" heard as "fifty" on an earnings call (same blog)</li>
+        <li>Eneco tested Scribe v3 Live on real customer calls: Dutch postcodes recognized correctly on the first try 40% more often, as reported by ElevenLabs (same blog)</li>
+        <li>Scribe v3 makes 27% fewer word errors than Scribe v2 across 102 languages, per ElevenLabs (same blog)</li>
+        <li>Not sponsored, no affiliate links.</li>
+      </ul>
+    </details>
     <details>
       <summary>Krea 3 draws 6.9x faster, and its math got rougher</summary>
       <ul>
