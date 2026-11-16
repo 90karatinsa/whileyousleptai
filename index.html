@@ -136,11 +136,23 @@
       <li class="tool"><a href="https://elevenlabs.io/blog/scribe-v3"><span class="name">Scribe v3</span><span class="go" aria-hidden="true">↗</span><span class="what">ElevenLabs' speech-to-text model; v3 Live is the realtime version for voice agents. ElevenLabs says v3 makes 27% fewer word errors than Scribe v2 across 102 languages.</span><span class="from">180 wrong words an hour</span></a></li>
       <li class="tool"><a href="https://huggingface.co/Edge0/Edge0-145B-NVFP4"><span class="name">Edge0-145B</span><span class="go" aria-hidden="true">↗</span><span class="what">An open 145B-parameter mixture-of-experts model. Edge0 says it runs on one 24 GB RTX 5090 D at about 80 tokens a second, with part of the model in regular RAM.</span><span class="from">145 billion parameters on one gaming card</span></a></li>
       <li class="tool"><a href="https://github.com/hyperionaidev/smolmaxxing"><span class="name">smolmaxxing</span><span class="go" aria-hidden="true">↗</span><span class="what">An open llama.cpp-based project that runs mixture-of-experts models on old, low-memory devices by keeping only some experts in RAM and reading the rest from flash.</span><span class="from">A 2013 iPad runs a 16B model</span></a></li>
+      <li class="tool"><a href="https://blog.kate.land/posts/using-voltage-glitching-to-unlock-the-a100/"><span class="name">Kate's GA100 research</span><span class="go" aria-hidden="true">↗</span><span class="what">A hardware researcher's write-up of a voltage-glitching weakness in Nvidia's GA100 chip that turns a CMP 170HX mining card into what is effectively an 80 GB A100. Research, not a product.</span><span class="from">This mining card had 80 GB hidden inside</span></a></li>
     </ul>
   </section>
 
   <section aria-labelledby="sources">
     <h2 id="sources">Sources <small>every claim, per video</small></h2>
+    <details>
+      <summary>This mining card had 80 GB hidden inside: voltage glitching the GA100</summary>
+      <ul>
+        <li>The CMP 170HX, an Ethereum mining card with nominally 8 or 10 GB of usable memory, actually carries ~80 and ~40 GB of HBM; it uses the same GA100 chip as the A100: <a href="https://blog.kate.land/posts/using-voltage-glitching-to-unlock-the-a100/">Kate's blog, "Using voltage glitching to unleash the A100 in my mining card" (Nov 10, 2026)</a></li>
+        <li>Fuses switch parts of the chip off (70 of 128 SMs on out of the box); "a blown fuse cannot be unblown in an economically feasible way" (same post)</li>
+        <li>Brief low-voltage pulses while the chip boots leave one safety setting (DISABLE_SW_OVERRIDE) at 0, which lets her turn off the secured-burn lock and write new fuse rows that re-enable healthy, disabled blocks; defective blocks stay off (same post)</li>
+        <li>Result: 80 GB usable on 8 GB cards with all 80 GB intact (about 90% in her small sample; one card had 64 GB); FP16 half2 FMA 85.861 vs 72.488 TFLOP/s for a retail A100 (about 1.2x) in one benchmark (same post)</li>
+        <li>Limits: 1 to 48 hours of glitching per card plus board modification; her own measurements; disclosed to NVIDIA before publishing.</li>
+        <li>Not sponsored, no affiliate links.</li>
+      </ul>
+    </details>
     <details>
       <summary>A 2013 iPad runs a 16-billion-parameter model: smolmaxxing</summary>
       <ul>
